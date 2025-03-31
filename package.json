@@ -1,0 +1,21 @@
+{
+  "name": "tools.bnop.vs-edu-addons",
+  "version": "0.0.1",
+  "displayName": "Visual Scripting Edu Addons",
+  "description": "",
+  "unity": "2021.3",
+  "unityRelease": "0b5",
+  "documentationUrl": "",
+  "licensesUrl": "https://unity.com/legal/as-terms",
+  "keywords": [
+    "visual scripting",
+    "visualscripting",
+    "addons"
+  ],
+  "dependencies": {},
+  "author": {
+    "name": "BNOP",
+    "email": "support@bnop.tools",
+    "url": "https://www.bnop.tools"
+  }
+}
