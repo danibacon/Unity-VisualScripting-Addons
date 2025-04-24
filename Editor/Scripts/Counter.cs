@@ -1,8 +1,7 @@
 namespace Unity.VisualScripting.Test
 {
-    [RenamedFrom("Bolt.Addons.Community.Fundamentals.CounterNode")]
     [UnitTitle("Counter")]
-    [UnitCategory("Community/Utility")]
+    [UnitCategory("Bezalel/Math")]
     [TypeIcon(typeof(Add<object>))]
     public class CounterNode : Unit
     {
@@ -18,9 +17,12 @@ namespace Unity.VisualScripting.Test
         public ControlOutput exit;
 
         [DoNotSerialize]
-        public ValueOutput timesTriggered;
+        public ValueInput Step;
+        
+        [DoNotSerialize]
+        public ValueOutput Count;
 
-        private int counter;
+        private float _counter;
 
         protected override void Definition()
         {
@@ -28,23 +30,25 @@ namespace Unity.VisualScripting.Test
             reset = ControlInput(nameof(reset), OnReset);
             exit = ControlOutput(nameof(exit));
 
-            timesTriggered = ValueOutput<int>(nameof(timesTriggered));
+            Step = ValueInput<float>(nameof(Step), 1);
+            Count = ValueOutput<float>(nameof(Count));
 
             Succession(enter, exit);
             Succession(reset, exit);
         }
 
-        public ControlOutput OnEnter(Flow flow)
+        private ControlOutput OnEnter(Flow flow)
         {
-            counter++;
-            flow.SetValue(timesTriggered, counter);
+            var step = flow.GetValue<float>(Step);
+            _counter += step;
+            flow.SetValue(Count, _counter);
             return exit;
         }
 
-        public ControlOutput OnReset(Flow flow)
+        private ControlOutput OnReset(Flow flow)
         {
-            counter = 0;
-            flow.SetValue(timesTriggered, counter);
+            _counter = 0;
+            flow.SetValue(Count, _counter);
             return null;
         }
     }
