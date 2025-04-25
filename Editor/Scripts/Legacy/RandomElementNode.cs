@@ -3,9 +3,9 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[UnitTitle("Random Item")]
-[UnitCategory("Bezalel/Collections")]
-[TypeIcon(typeof(IEnumerable))]
+// [UnitTitle("Random Item")]
+// [UnitCategory("Community/Collections")]
+// [TypeIcon(typeof(IEnumerable))]
 public class RandomElementNode : Unit
 {
     /// <summary>
