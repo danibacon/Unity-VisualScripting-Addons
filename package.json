@@ -1,8 +1,8 @@
 {
-  "name": "tools.bnop.vs-edu-addons",
+  "name": "tools.bnop.unity-visualscripting-more",
   "version": "0.1.0",
-  "displayName": "Visual Scripting Edu Addons",
-  "description": "",
+  "displayName": "Visual Scripting More",
+  "description": "Additoinal higher level simpler nodes for Unity visual scripting",
   "unity": "2021.3",
   "unityRelease": "0b5",
   "documentationUrl": "",
@@ -10,9 +10,13 @@
   "keywords": [
     "visual scripting",
     "visualscripting",
+    "scripting",
+    "extras",
     "addons"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "com.unity.visualscripting": "1.9.5"
+  },
   "author": {
     "name": "BNOP",
     "email": "support@bnop.tools",
