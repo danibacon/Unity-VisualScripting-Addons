@@ -1,55 +1,60 @@
-namespace Unity.VisualScripting.Test
+using Unity.VisualScripting;
+
+[UnitTitle("Counter")]
+[UnitCategory("Bezalel/Math")]
+[TypeIcon(typeof(Add<object>))]
+public class CounterNode : Unit
 {
-    [UnitTitle("Counter")]
-    [UnitCategory("Bezalel/Math")]
-    [TypeIcon(typeof(Add<object>))]
-    public class CounterNode : Unit
+    [DoNotSerialize]
+    [PortLabelHidden]
+    public ControlInput Enter;
+
+    [DoNotSerialize]
+    public ControlInput Reset;
+
+    [DoNotSerialize]
+    [PortLabelHidden]
+    public ControlOutput Exit;
+
+    [DoNotSerialize]
+    public ValueInput Step;
+    
+    [DoNotSerialize]
+    public ValueOutput Count;
+    
+    [Inspectable]
+    public bool CustomStep;
+
+    private float _counter;
+    private float _step = 1;
+
+    protected override void Definition()
     {
-        [DoNotSerialize]
-        [PortLabelHidden]
-        public ControlInput enter;
+        Enter = ControlInput(nameof(Enter), OnEnter);
+        Reset = ControlInput(nameof(Reset), OnReset);
+        Exit = ControlOutput(nameof(Exit));
 
-        [DoNotSerialize]
-        public ControlInput reset;
-
-        [DoNotSerialize]
-        [PortLabelHidden]
-        public ControlOutput exit;
-
-        [DoNotSerialize]
-        public ValueInput Step;
+        if (CustomStep)
+            Step = ValueInput<float>(nameof(Step), _step);
         
-        [DoNotSerialize]
-        public ValueOutput Count;
+        Count = ValueOutput<float>(nameof(Count));
 
-        private float _counter;
+        Succession(Enter, Exit);
+        // Succession(Reset, Exit);
+    }
 
-        protected override void Definition()
-        {
-            enter = ControlInput(nameof(enter), OnEnter);
-            reset = ControlInput(nameof(reset), OnReset);
-            exit = ControlOutput(nameof(exit));
+    private ControlOutput OnEnter(Flow flow)
+    {
+        if(CustomStep) _step = flow.GetValue<float>(Step);
+        _counter += _step;
+        flow.SetValue(Count, _counter);
+        return Exit;
+    }
 
-            Step = ValueInput<float>(nameof(Step), 1);
-            Count = ValueOutput<float>(nameof(Count));
-
-            Succession(enter, exit);
-            Succession(reset, exit);
-        }
-
-        private ControlOutput OnEnter(Flow flow)
-        {
-            var step = flow.GetValue<float>(Step);
-            _counter += step;
-            flow.SetValue(Count, _counter);
-            return exit;
-        }
-
-        private ControlOutput OnReset(Flow flow)
-        {
-            _counter = 0;
-            flow.SetValue(Count, _counter);
-            return null;
-        }
+    private ControlOutput OnReset(Flow flow)
+    {
+        _counter = 0;
+        flow.SetValue(Count, _counter);
+        return null;
     }
 }
