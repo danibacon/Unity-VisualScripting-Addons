@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 /// <summary>
 /// Runs a timer and outputs elapsed and remaining measurements.
 /// </summary>
-[UnitCategory("Bezalel/Time")]
+[UnitCategory("More/Time")]
 [UnitShortTitle("Stopwatch")]
 [UnitTitle("Stopwatch")]
 [TypeIcon(typeof(Timer))]

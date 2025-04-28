@@ -4,7 +4,7 @@ using UnityEngine;
 // namespace Unity.VisualScripting.Bezalel
 // {
 
-    [UnitCategory("Bezalel")]
+    [UnitCategory("More/Input")]
     [UnitTitle("Get Mouse Position 2D")]
     [UnitSubtitle("Input")]
     [TypeIcon(typeof(Input))]

@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-[UnitCategory("Bezalel/Time")]
+[UnitCategory("More/Time")]
 [UnitTitle("Format Time")]
 [UnitShortTitle("Format Time")]
 [TypeIcon(typeof(Time))]

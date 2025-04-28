@@ -1,7 +1,7 @@
 ﻿using Unity.VisualScripting;
 
 
-[UnitCategory("Bezalel")]
+[UnitCategory("More/Math")]
 [UnitShortTitle("Variable Add")]
 // [UnitSubtitle("Variable")]
 [UnitTitle("Variable Add")]

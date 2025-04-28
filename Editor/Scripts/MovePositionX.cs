@@ -1,9 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 
 
-[UnitCategory("Bezalel/Physics")]
+[UnitCategory("More/Physics")]
 [UnitSurtitle("Rigidbody 2D")]
 [UnitTitle("Move Position X")]
 [UnitShortTitle("Move Position X")]

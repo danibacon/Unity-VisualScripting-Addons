@@ -6,7 +6,7 @@ namespace Unity.VisualScripting.Bezalel
 {
     
     
-[UnitCategory("Bezalel/Control")]
+[UnitCategory("More/Control")]
 [UnitTitle("If")]
 [TypeIcon(typeof(VisualScripting.If))]
 public class If : Unit

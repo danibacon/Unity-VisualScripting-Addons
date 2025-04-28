@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-[UnitCategory("Bezalel")]
+[UnitCategory("More/Debug")]
 [UnitSurtitle("Debug")]
 [UnitTitle("Log")]
 [UnitShortTitle("Log")]

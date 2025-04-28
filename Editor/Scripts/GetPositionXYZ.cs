@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-[UnitCategory("Bezalel")]
+[UnitCategory("More/Transform")]
 [UnitSurtitle("Transform")]
 [UnitTitle("Get Position")]
 [UnitShortTitle("Get Position")]

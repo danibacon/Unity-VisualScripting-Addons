@@ -1,7 +1,7 @@
 ﻿using Unity.VisualScripting;
 
 
-[UnitCategory("Bezalel")]
+[UnitCategory("More/Math")]
 [UnitShortTitle("Variable Divide")]
 // [UnitSubtitle("Variable")]
 [UnitTitle("Variable Divide")]

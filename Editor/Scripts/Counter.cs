@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 
 [UnitTitle("Counter")]
-[UnitCategory("Bezalel/Math")]
+[UnitCategory("More/Math")]
 [TypeIcon(typeof(Add<object>))]
 public class CounterNode : Unit
 {

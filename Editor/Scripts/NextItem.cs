@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [UnitTitle("Next Item")]
-[UnitCategory("Bezalel/Collections")]
+[UnitCategory("More/Collections")]
 [TypeIcon(typeof(IEnumerable))]
 public class NextItem : Unit
 {

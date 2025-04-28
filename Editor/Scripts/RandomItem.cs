@@ -7,7 +7,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [UnitTitle("Random Item")]
-[UnitCategory("Bezalel/Collections")]
+[UnitCategory("More/Collections")]
 [TypeIcon(typeof(IEnumerable))]
 public class RandomItem : Unit
 {

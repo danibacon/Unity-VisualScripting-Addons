@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-[UnitCategory("Bezalel/Physics")]
+[UnitCategory("More/Physics")]
 [UnitSurtitle("Rigidbody 2D")]
 [UnitTitle("Translate")]
 [UnitShortTitle("Translate")]

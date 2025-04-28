@@ -25,7 +25,7 @@ Development is open to the community.
 
 1. Add a visual script to any Game Object (Add Component \> Script Machine).  
 2. In the script graph add new node: Right click visual script canvas \> Add Node.  
-3. Custom nodes will be found under the **Bezalel** category.
+3. Custom nodes will be found under the **More** category.
 
 ---
 

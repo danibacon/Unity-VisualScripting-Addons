@@ -4,7 +4,7 @@ using UnityEngine;
 // namespace Unity.VisualScripting.Bezalel
 // {
 
-    [UnitCategory("Bezalel")]
+    [UnitCategory("More/Math")]
     [UnitTitle("Confine")]
     [UnitSubtitle("Vector2")]
     [TypeIcon(typeof(Vector2))]

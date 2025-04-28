@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 // namespace Unity.VisualScripting
 // {
 // #if MODULE_PHYSICS_2D_EXISTS
-[UnitCategory("Bezalel/Physics")]
+[UnitCategory("More/Physics")]
     public abstract class CollisionEvent2DUnit : GameObjectEventUnit<Collision2D>
     {
         
