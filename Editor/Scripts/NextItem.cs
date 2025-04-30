@@ -24,6 +24,7 @@ public class NextItem : Unit
     /// The Control Output for when the query is complete.
     /// </summary>
     [DoNotSerialize]
+    [PortLabelHidden]
     public ControlOutput Exit;
 
     /// <summary>

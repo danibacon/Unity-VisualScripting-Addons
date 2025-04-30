@@ -28,6 +28,7 @@ public class RandomItem : Unit
     /// The Control Output for when the query is complete.
     /// </summary>
     [DoNotSerialize]
+    [PortLabelHidden]
     public ControlOutput Exit;
 
     /// <summary>
