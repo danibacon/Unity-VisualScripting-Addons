@@ -7,6 +7,10 @@ Development is open to the community.
 
 # Installing
 
+> Note: This method requires Git installed on your computer.  
+If you don't have it, please install it - [Windows](https://git-scm.com/downloads/win) / Mac, [easiest is to install Github Desktop](https://desktop.github.com/download/), or [install the MacOs command line tools](https://macpaw.com/how-to/install-command-line-tools).
+> 
+
 1. Open your Unity project.  
 2. New projects should first initialize the build in Unity Visual Scripting package:  
    Edit \> Project Settings \> Visual Scripting \> Initialize button.  
@@ -17,18 +21,18 @@ Development is open to the community.
    ![Add package Screenshot](https://github.com/danibacon/Unity-VisualScripting-More/blob/main/Images/vsmore-add-package-screenshot.jpg)  
      
 4. Add the following url and hit the Install button.  
-   > [git@github.com:danibacon/Unity-VisualScripting-More.git](mailto:git@github.com)  
+   > [https://github.com/danibacon/Unity-VisualScripting-More.git]()  
 5. Refresh the visual scripting library: Edit \> Project Settings \> Visual Scripting \> Press the Regenerate Nodes button.  
 6. That's it\! The new nodes will be available for use.
 
-### Adding a custom node
+---
+# Adding the new nodes
 
 1. Add a visual script to any Game Object (Add Component \> Script Machine).  
 2. In the script graph add new node: Right click visual script canvas \> Add Node.  
-3. Custom nodes will be found under the **More** category.
+3. New nodes will be found under the **More** category.
 
 ---
-
 # What's included
 
 Variables
