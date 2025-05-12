@@ -47,6 +47,7 @@ public class RandomItem : Unit
     public bool NoRepeats;
     
     private IList _shuffledList = new List<object>();
+    private object _lastItem;
 
     protected override void Definition()
     {
@@ -68,33 +69,25 @@ public class RandomItem : Unit
         var list = flow.GetValue<IList>(List);
         if (list == null) return Exit;
         
-        if (list.Count == 0)
+        switch (list.Count)
         {
-            Debug.LogWarning("List is empty, null returned.");
-            flow.SetValue(Value, null);
-            return Exit;
+            case 0:
+                Debug.LogWarning("List is empty, null returned.");
+                flow.SetValue(Value, null);
+                return Exit;
+            case 1:
+                Debug.LogWarning("List has only one item, its always the one returned.");
+                flow.SetValue(Value, list[0]);
+                return Exit;
         }
 
-        if (NoRepeats)
-        {
-            // If queue is empty, repopulate it
-            if (_shuffledList.Count == 0)
-            {
-                _shuffledList = ShallowClone(list);
-                Shuffle(_shuffledList);
-            }
-        
-            // Dequeue and return the first item
-            var first = _shuffledList[0];
-            _shuffledList.RemoveAt(0);
-            flow.SetValue(Value, first);
-        }
-        else
-        {
-            //Lists have fast random access, so... use it.
-            //Prevents overhead associated with .ElementAt
-            flow.SetValue(Value, list[Random.Range(0, list.Count)]);
-        }
+        // If we are not using no repeats, just return a random item
+        _shuffledList = ShallowClone(list);
+        if(NoRepeats && _lastItem != null)
+            _shuffledList.Remove(_lastItem);
+        var randomItem = _shuffledList[Random.Range(0, _shuffledList.Count)];
+        flow.SetValue(Value, randomItem);
+        _lastItem = randomItem;
 
         return Exit;
     }
@@ -102,6 +95,7 @@ public class RandomItem : Unit
     private ControlOutput OnReset(Flow flow)
     {
         _shuffledList.Clear();
+        _lastItem = null;
         flow.SetValue(Value, null);
         return null;
     }
