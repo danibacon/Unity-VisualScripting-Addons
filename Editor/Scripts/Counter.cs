@@ -40,12 +40,13 @@ public class CounterNode : Unit
         Count = ValueOutput<float>(nameof(Count));
 
         Succession(Enter, Exit);
-        // Succession(Reset, Exit);
     }
 
     private ControlOutput OnEnter(Flow flow)
     {
-        if(CustomStep) _step = flow.GetValue<float>(Step);
+        if (CustomStep) _step = flow.GetValue<float>(Step);
+        else _step = 1;
+        
         _counter += _step;
         flow.SetValue(Count, _counter);
         return Exit;
