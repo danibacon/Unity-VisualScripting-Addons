@@ -74,10 +74,8 @@ public class If : Unit
     protected override void Definition()
     {
         
-        // Debug.Log(BranchingType);
-        
-        switch(BranchingType){
-        
+        switch(BranchingType)
+        {
             case(BranchType.Boolean):
                 enter = ControlInput("", (flow) =>
                 {
@@ -123,7 +121,6 @@ public class If : Unit
                 exitNumberGreater = ControlOutput("exitNumberGreater");
                 exitNumberSmaller = ControlOutput("exitNumberSmaller");
                 exitElse = ControlOutput("exitElse");
-
                 
                 valueA = ValueInput<float>("A", 0);
                 valueB = ValueInput<float>("B", 0);
@@ -139,19 +136,18 @@ public class If : Unit
                         return exitStringEqual;
                     
                     if (a != b && exitStringNotEqual.hasValidConnection)
-                        return exitStringEqual;
-                    
+                        return exitStringNotEqual;
+
                     return exitElse;
                 });
 
                 exitStringEqual = ControlOutput("exitStringEqual");
                 exitStringNotEqual = ControlOutput("exitStringNotEqual");
                 exitElse = ControlOutput("exitElse");
-        
+
                 valueA = ValueInput<string>("A", string.Empty);
                 valueB = ValueInput<string>("B", string.Empty);
                 return;
-            
         }
     }
     

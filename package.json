@@ -1,6 +1,6 @@
 {
   "name": "tools.bnop.unity-visualscripting-more",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "displayName": "Visual Scripting More",
   "description": "Additional higher level simpler nodes for Unity visual scripting",
   "unity": "2021.3",
